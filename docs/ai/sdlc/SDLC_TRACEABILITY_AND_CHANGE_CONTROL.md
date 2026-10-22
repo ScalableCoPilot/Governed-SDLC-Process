@@ -873,6 +873,30 @@ These records do not create a new artifact category, lifecycle stage, approval a
 
 The fixed repository-relative persistence roots are `docs\sdlc-records\governance\` for governance-subject records and `docs\sdlc-records\product\` for product-subject records. Their adoption requires explicit Human governance decision and approval through governed change control; a suggested directory or process request alone does not approve this convention. Execution context must identify the applicable root, stable feature/work identifier, actor-owned record scope, and resolvable adoption or applicable authorization evidence before invocation publication and execution.
 
+#### First-use governance-root bootstrap
+
+This subsection defines a limited first-use route for establishing the governance persistence convention when its normal precondition cannot yet be satisfied. It applies only when all of the following are established: the repository identity is known; the applicable governance persistence root has not previously been established as adopted; no valid adoption or authorization evidence is available under that root; and no governance process invocation or record publication has yet occurred for the bootstrap work.
+
+Before any Governance Audit, Governance Remediation, governance investigation, or other governance-process invocation begins, an attributable Human governance decision must explicitly authorize the bootstrap. The decision must identify:
+
+- the canonical repository identity and the repository state to which the authorization applies, including the relevant commit or other resolvable source-state identity;
+- the exact persistence root being adopted, which for governance-subject records is `docs\sdlc-records\governance\`;
+- the purpose and bounded scope of the bootstrap, including authorization for the initial bootstrap record publication and the explicitly identified process stage, subject to the existing stage-ordering and stage-start requirements;
+- the stable governance Work ID, the designated initial process actor, and the exact actor-owned record scope;
+- the applicable Master Governance source paths and their SHA-256 fingerprints, where the decision concerns their current applicability;
+- the authorized approval-evidence location and the method by which another actor can resolve and validate that evidence; and
+- any limitations, conditions, and one-time restrictions on the authorization.
+
+The bootstrap decision must be recorded as an existing Human governance decision or approval through an attributable, independently resolvable approval channel that does not depend on prior publication under the not-yet-adopted governance root. Preserve the actual decision, its source, scope, conditions, and integrity information. The decision evidence must be retained at its authorized source and linked from the first bootstrap attempt record once publication becomes permitted. This provision does not create a new governed artifact category, a second persistence root, or a substitute approval authority.
+
+If no such independently resolvable approval evidence can be established, the process must stop. A conversational request, a directory's existence, an empty or populated records directory, a generated Work ID, a commit, a fingerprint, or an agent's assertion does not by itself establish the required Human decision.
+
+The explicit bootstrap decision may adopt the specified governance persistence root for the identified repository and authorize the bounded bootstrap and the explicitly identified record publication; it does not waive any prerequisite for a Governance Audit or any other process stage.
+
+Before publishing the initial invocation, the designated actor must validate the decision evidence, repository identity and state, root, Work ID, actor identity, and record scope against the decision. The actor may then publish only its own invocation metadata and other records permitted by section 33.1 of SDLC_ARTIFACT_GOVERNANCE.md within the expressly authorized scope. The initial audit must assess the applicable governance framework under the ordinary audit criteria; the bootstrap authorization does not relax its assessment scope, evidence requirements, findings criteria, or outcome conditions.
+
+After the initial invocation, all subsequent invocations and publications must follow the normal persistence, authorization, integrity, immutability, recovery, and governed change-control requirements. This bootstrap provision is not a standing exemption, does not authorize an actor to create or infer Human decisions, and does not permit an audit or other process to establish its own prior authorization.
+
 Select the root by the subject of the governed work, not by the executing Skill or Agent. Governance Audit, Governance Remediation, and governance-focused investigations and corrective decisions use the governance root. Product lifecycle processes, product Orchestrator coordination, and product-focused investigations and corrective decisions use the product root. For cross-feature product work, establish one explicitly authorized owning feature scope and reference other affected features without duplicating the canonical report. If ownership or governance/product classification is mixed, ambiguous, or unestablished, stop and obtain a scoped Human decision before invocation publication or execution; do not infer a root.
 
 Within the applicable root, use a stable feature/work identifier and the following relative structure. The `<feature-id>` placeholder also represents the stable governance-work identifier for governance-subject records:
