@@ -349,7 +349,9 @@ Do not lose previous cycle history.
 
 # 10. Initial Governance Audit
 
-The first action must be a complete Governance Audit.
+The first substantive governance process action must be a complete Governance Audit. Before invoking it, satisfy the one-time persistence bootstrap preconditions in `SDLC_TRACEABILITY_AND_CHANGE_CONTROL.md` §30.1 and `SDLC_ARTIFACT_GOVERNANCE.md` §33.1 when the repository has no established governance root. These preconditions are limited to validating the attributable external Human decision, exact repository commit and Master fingerprints, designated actor and scope, collision-checking the candidate Work ID, and publishing the first actor-owned attempt record without overwrite. They do not constitute a substitute audit or authorize remediation.
+
+For a GitHub-hosted repository, use the lightweight authorization comment/review route and copy-ready decision contract defined in section 30.1. Do not demand a prior attempt record before the first attempt can be published; the successful first publication reserves the Work ID. If the authorization or publication preconditions fail, pause and state exactly what is missing. Do not infer approval from this conversation or from local repository metadata.
 
 Use:
 

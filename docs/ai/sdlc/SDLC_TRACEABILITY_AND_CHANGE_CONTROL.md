@@ -889,6 +889,38 @@ Before any Governance Audit, Governance Remediation, governance investigation, o
 
 The bootstrap decision must be recorded as an existing Human governance decision or approval through an attributable, independently resolvable approval channel that does not depend on prior publication under the not-yet-adopted governance root. Preserve the actual decision, its source, scope, conditions, and integrity information. The decision evidence must be retained at its authorized source and linked from the first bootstrap attempt record once publication becomes permitted. This provision does not create a new governed artifact category, a second persistence root, or a substitute approval authority.
 
+##### Default lightweight evidence route for GitHub-hosted repositories
+
+To avoid requiring a separate approval platform or protected-branch configuration solely for first-use bootstrap, a GitHub-hosted repository may use an attributable Human authorization comment or review on a GitHub issue or pull request in the canonical repository. Prefer a pull-request review when the authorization is already being handled through a pull request; an issue comment is an acceptable lightweight alternative when no suitable pull request exists. The GitHub record is the external evidence source; copying its text into the governance record root does not create authority. A protected branch is not, by itself, a prerequisite for using this evidence route.
+
+The decision-maker must be the repository owner, an administrator, or another Human whose authority to make this repository's governance decision is independently established. Validate the account and its authority using the GitHub repository interface or an authenticated GitHub CLI session. The existence of a GitHub account, public profile, commit author string, or URL alone does not establish that the author is authorized. If identity or authority cannot be verified, stop.
+
+Before requesting authorization, identify the canonical repository, exact full commit SHA, SHA-256 fingerprints of all three Master Governance files, exact governance persistence root, proposed stable Work ID, designated initial actor, and the limited scope of the first invocation. The repository working tree must be clean when the authorization is issued. Generate the candidate Work ID and collision-check it against both `docs\sdlc-records\governance\` and `docs\sdlc-records\product\` before requesting authorization. This pre-check does not reserve the ID. Recheck for collisions immediately before first publication; the successful no-overwrite publication of the first `attempt.json` reserves the Work ID. If a collision or repository-state mismatch is found, do not publish; issue a new decision bound to the corrected ID or repository state.
+
+The authorization comment or review must explicitly state the decision and include the repository identity, full commit SHA, all three Master file paths and SHA-256 fingerprints, governance record root, stable Work ID, designated actor, authorized initial stage (`complete Governance Audit`), exact permitted initial record publication, output scope, and the one-time limitation. The exact comment/review permalink is captured in the first attempt record after GitHub creates it; do not require a comment to contain a permalink to itself. The decision must explicitly exclude corrective changes, approval of proposed changes, independent verification, independent review, subsequent process starts, and initial Master-baseline adoption. Those activities remain subject to their own existing stage-start, approval, actor-separation, assurance, and adoption controls. Approval of a governance amendment and authorization to bootstrap the first audit are distinct decisions; neither substitutes for the other.
+
+Copy-ready decision text (replace every bracketed field; post it as an authenticated comment or review in the canonical repository):
+
+```text
+HUMAN GOVERNANCE DECISION — ONE-TIME FIRST-USE BOOTSTRAP
+
+Decision: I AUTHORIZE the one-time bootstrap and ADOPT the specified governance persistence root for this repository state.
+Canonical repository: [owner/repository]
+Authorized repository state: [full commit SHA]
+Master Governance fingerprints:
+- docs/ai/sdlc/SDLC_GOVERNANCE.md: SHA-256 [hash]
+- docs/ai/sdlc/SDLC_ARTIFACT_GOVERNANCE.md: SHA-256 [hash]
+- docs/ai/sdlc/SDLC_TRACEABILITY_AND_CHANGE_CONTROL.md: SHA-256 [hash]
+Governance record root: docs/sdlc-records/governance/
+Stable Work ID: [collision-checked ID]
+Designated initial actor: [actor identity]
+Authorized stage: complete Governance Audit only
+Authorized initial publication: the designated actor's own first attempt.json and permitted actor-owned audit records under the governance root, referencing this decision
+Scope and limits: one-time authorization for this repository state and Work ID only. This does not authorize remediation, source changes, change approval, verification, review, another process start, or baseline adoption. Any repository-state, Master-fingerprint, actor, root, Work ID, or scope mismatch invalidates this authorization.
+```
+
+Retain the canonical URL/permalink to the actual GitHub decision, its author identity and timestamp, and enough source metadata to re-open and validate it. The first attempt record must link to that external source and record the exact commit and Master fingerprints. If the evidence source is unavailable, edited in a way that makes the decision ambiguous, revoked, or otherwise no longer verifiable, stop and reconcile; do not reconstruct the decision from conversation history.
+
 If no such independently resolvable approval evidence can be established, the process must stop. A conversational request, a directory's existence, an empty or populated records directory, a generated Work ID, a commit, a fingerprint, or an agent's assertion does not by itself establish the required Human decision.
 
 The explicit bootstrap decision may adopt the specified governance persistence root for the identified repository and authorize the bounded bootstrap and the explicitly identified record publication; it does not waive any prerequisite for a Governance Audit or any other process stage.

@@ -13,6 +13,8 @@ The Skill contains the complete SDLC Governance Audit procedure and is the autho
 
 Use the Skill without modifying its instructions.
 
+Before beginning the audit, follow the Skill's persistence preflight. For a first-use governance-root bootstrap, validate the external Human authorization and exact repository/Master state under `SDLC_TRACEABILITY_AND_CHANGE_CONTROL.md` §30.1, publish only the authorized actor-owned first attempt record without overwriting, and start the complete audit only after that publication succeeds. Do not require a prior governance attempt record to authorize its own first publication, and do not infer authorization from the conversation or a local file. If the preflight cannot be completed, stop and report the exact missing evidence.
+
 The Agent remains a dedicated entry point for executing the SDLC Governance Audit.
 
 The audit must remain:

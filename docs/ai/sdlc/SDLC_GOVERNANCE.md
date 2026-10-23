@@ -57,6 +57,12 @@ The SDLC follows these principles:
 
 ## 3. Governed SDLC Lifecycle
 
+### Fresh-repository governance initialization
+
+A repository that has not yet established its governance persistence root or prospective Master baseline must not be required to produce historical governance records that cannot yet exist. Before the first governance-process invocation, follow the one-time first-use route in `SDLC_TRACEABILITY_AND_CHANGE_CONTROL.md` §30.1 and the publication boundary in `SDLC_ARTIFACT_GOVERNANCE.md` §33.1. The default lightweight evidence route for a GitHub-hosted repository is an attributable authorization comment or review in the canonical repository, validated against the exact repository commit, Master fingerprints, record root, Work ID, actor, and limited initial stage.
+
+The bootstrap authorization permits only the first actor-owned invocation publication and the explicitly authorized complete Governance Audit. It does not authorize remediation or source changes, waive ordinary audit criteria, or adopt a Master baseline. Findings proceed through the normal governed investigation, decision, approval, application, independent verification, review, and re-audit lifecycle. The initial prospective Master baseline may be adopted only through a separate explicit Human decision after all applicable assurance gates pass. An interrupted or established repository must be reconciled against its existing records; it must not be declared fresh to bypass missing evidence.
+
 ### Portability Assessment entry and reassessment
 
 Before a new target project begins its first SDLC activity under this framework, the Portability Assessment mechanism defined in `SDLC_ARTIFACT_GOVERNANCE.md` §3.4 must complete an assessment against identified source-framework and target-project baselines. The assessment is advisory: it reports evidence, classifications, adaptations, uncertainties, and any recommended possible blocking condition. A human authorized for that project must explicitly decide whether each recommended possible blocking condition applies to that project. The Assessment Agent must neither make that decision nor automatically enforce a block. Record the human decision and rationale with assessment evidence; do not label it Human Requirement Approval or Human Acceptance. Until the human decision about a recommended possible blocker is recorded, the first SDLC activity (or, on reassessment, the next affected SDLC activity) does not start. This decision does not approve a product Requirement or Implementation Plan.
@@ -739,6 +745,10 @@ This mechanism is outside—not an addition to—the 52-core catalog:
 These references connect the entry point to its governing procedure and invocation inputs. The separate mechanism is governed by section 3.4 of `SDLC_ARTIFACT_GOVERNANCE.md`; the fixed 52-core counts above are unchanged.
 
 ---
+
+### First-use governance bootstrap
+
+The operational first-use authorization, record-publication, Work ID reservation, recovery, and evidence requirements are defined by `SDLC_TRACEABILITY_AND_CHANGE_CONTROL.md` §30.1 and `SDLC_ARTIFACT_GOVERNANCE.md` §33.1. These requirements establish only the permitted first invocation and do not replace the ordinary Human gates or the separate prospective Master-baseline adoption required by section 42 of the traceability document.
 
 ### Governance Amendment Assurance Mechanisms
 

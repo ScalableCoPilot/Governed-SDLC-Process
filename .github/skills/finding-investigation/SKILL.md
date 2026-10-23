@@ -32,7 +32,7 @@ Before beginning the investigation:
 1. Read the Finding Investigation Guideline.
 2. Read the Finding Investigation Prompt.
 3. Read the Finding Investigation Request.
-4. Identify the request subject type and its source; for an enhancement, preserve the human wording, attribution, and investigation authorization.
+4. Identify the request subject type and its source; for an enhancement, preserve the human wording, attribution, and investigation authorization. Before execution, validate the existing Work ID reservation or collision-check the candidate against both persistence roots and publish the first actor-owned attempt record without overwrite to reserve it; do not require a prior attempt record before the first publication, and stop on any collision or authorization mismatch.
 5. Identify the affected governed artifact.
 6. Establish the applicable current approved source documents and their status.
 7. Inspect the actual repository or relevant governed artifacts.
